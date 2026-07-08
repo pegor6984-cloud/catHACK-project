@@ -19,6 +19,12 @@ This code included an Internet connection and a beautiful Internet icon when con
 
 Connectio:
 
+buzzer:
+
+gnd-gnd
+
+vcc-3D
+
 rgd (Keyboard):
 
 vcc-5v
