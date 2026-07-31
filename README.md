@@ -7,13 +7,13 @@
 ╚██████╗██║  ██║   ██║   ███████╗███████╗██║  ██║╚██████╔╝
  ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝
 ```
-Hello my name is Egor I'm 13 I live in Germany I created my new catZERO project on ESP32-S3.Based on this project, ESP32-S3 Super Mini is used,nrf24,Ir capture/transmit,oled display (128x64),3 clock buttons, 2.2 kOhm resistor,3.3 kOhm resistor (2x),6.8 kOhm resistor charging board, boost board from 3.7 to 5 Volts, 650 mah battery, breadboards (2x), wires.I made some changes to the program and now there is an SD card lift.And now a control console has appeared there, but it is not quite completed.Due to a lack of pins for the SD card, we had to use a new technique for connecting clock buttons to the board.Now all the buttons are connected via resistors to one pin and everything works fine
+Hello my name is Egor I'm 13 I live in Germany I created my new catZERO project on ESP32-S3.Based on this project, ESP32-S3 Super Mini is used.I made some changes to the program and now there is an SD card lift.And now a control console has appeared there, but it is not quite completed.Due to a lack of pins for the SD card, we had to use a new technique for connecting clock buttons to the board.Now all the buttons are connected via resistors to one pin and everything works fine
 Now a Wi-Fi chat has been added. If you are connected to Wi-Fi and you go to the IP address that the program gave you, then you can chat from device to device. Then a battery calculation was added. If you use exactly the same battery calculation as mine. To be more precise, 650 mah And if you have a different battery calculation, then you can set this in the program I have done such a great job so please can any of you promote me Был улучшен nrf Jammer но он всё равно плохо работает и был лучшим TV-B-Gone теперь он реально может включать и выключать телевизоры
 Sorry for the fact that I was gone for so long the project has undergone very big changes now We have switched to a new processor Sorry that it is more expensive but now there are more functions We have switched to the ESP32 S3 Super Mini raft a new module has been added that's all CC1101 SD card module circuit diagrams I will now post and now a new command will appear firstly for CC1101 and working Bad USB scripts have appeared
 And now there are two new RGB LEDs, one we place under the keyboard, our navigation buttons, and the second I use as a piece of LED strip for eight RGB LEDs
 In the meantime, I’ve tried adding a lot of new things; first of all, I attempted to create an improved Deauther and Evil Portal.I also improved the jammer, but it still isn't working—even though I tried porting that function over from the Bruce firmware. Then I created a new "Apps" section; it now includes a calculator, two games, and Wikipedia. Now, when you connect to Wi-Fi, you can access Wikipedia, type in a question, and get an answer from the site. But in reality, everything else remains unchanged.
 I also spent a great deal of time working with a library U8g2 for Cyrillic support—since I’m from Ukraine, I’m familiar with Russian and other languages ​​that use the Cyrillic script. I tried to get two libraries working simultaneously: one handling rendering and the Wi-Fi chat, and another managing Wikipedia integration, so that Russian text could be displayed.
-But in the end, nothing worked out for me, so guys, I’m really asking for your help.
+But in the end, nothing worked out for me, so guys, I’m really asking for your help.Hello, my dear viewers. I am finally ready to present the Cat Zero 2.1.5 firmware to you. It includes a lot of new features; first of all, there is now a launcher—a GitHub repository with a fully ready-to-use launcher is coming soon, but there is already a built-in, fully functional launcher. Support for RFID tags has also been added, meaning it now supports modules such as the PN532 and RC522 There is also a new airfit menu, it has module settings, usage protocol and pinout, the firmware is now being actively improved. Sorry because in this code there are a lot of different crutches, some kind of stubs, and so on, but soon I will try to fix it all, firstly with the rc522 module, you can scan the service marks then with the pn532 module. Is it possible to scan and emulate, maybe the emulation is not so accurate, but soon I will fix it, it still works now active work on a file manager where it will be possible to move the built-in memory from an SD card, you can copy it, delete it, and so on, we are working on a new one and A new firmware version will be released soon, so stay tuned for updates.New GPIO pins have appeared, and while they could potentially be used in other ways, for the time being, they are used for interfacing with R-Fit modules.There is also a new Apps menu, it has games and Wikipedia when the Internet is connected. You can ask questions on Wikipedia. Then badUSB scripts appeared,There are also many new features; I’ll try to describe them all soon, and for now, I’m posting the new code.We’ve also started working on Bluetooth support, though—I apologize—progress is currently slow because there are other, newer, and more interesting ideas taking priority. However, if you’d like, I can begin full-scale development on Bluetooth features—such as BADBLE.
 
 This code included an Internet connection and a beautiful Internet icon when connected to it
 
@@ -130,6 +130,14 @@ spectrum
 
 Wi-fi chat
 
+deuther
+
+evil portal
+
+bluetooth:
+
+scan
+
 nRF24:
 
 Spectrum
@@ -162,6 +170,45 @@ Timeout
 Reset
 
 Reboot
+
+CC1101:
+
+spectrum (vert)
+
+spectrum (horiz)
+
+jammer
+
+capture
+
+transmit
+
+storager:
+
+The file manager function isn't working yet; selecting it causes the device to reboot. Please do not use this feature for the time being, as it will restart your device. I apologize for the inconvenience and will fix this issue soon.
+
+launcher:
+
+As soon as you select this menu, you enter the launcher, where you can install firmware from an SD card (as a .bin file); at the very end, there is a button to return to the standard menu.
+
+apps:
+
+audio
+
+dino
+
+Bird
+
+Wikipedia
+
+rfid:
+
+config
+
+scan
+
+emulate
+
 
 That's all for now, now I'll sit and improve my code!!
 
